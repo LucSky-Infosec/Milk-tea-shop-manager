@@ -47,7 +47,7 @@ public class Table {
     }
     @Override
     public String toString() {
-        return "Table" + "id=" + id + ", TableName=" + TableName + ", DateCreated=" + DateCreated + ", Status=" + Status + '}';
+        return "Table{" + "id=" + id + ", TableName=" + TableName + ", DateCreated=" + DateCreated + ", Status=" + Status + '}';
     }
 
 }
