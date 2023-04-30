@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background3"
+        android:gravity="center_horizontal"
+        ></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#80000000"
+        android:gravity="center_horizontal"
+        >
+        <ImageView
+            android:layout_width="256dp"
+            android:layout_height="213dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/tiger" />
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:alpha="0.9"
+            android:background="@drawable/rounded_transparent"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:hint="Tài khoản"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#8F8B8B"
+            android:textSize="20dp"
+            android:drawablePadding="35dp"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:hint="Mật khẩu"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#8F8B8B"
+            android:textSize="22dp"
+            android:background="@drawable/rounded_transparent"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:alpha="0.9"
+            android:drawablePadding="35dp"
+            />
+        <CheckBox
+            android:id="@+id/cbRememberPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ghi nhớ mật khẩu"
+            android:textColor="#8F8B8B"
+            android:textSize="25dp"
+        />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="LOG IN"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:backgroundTint="#4D09AA8A"
+            />
+        <View
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#8F8B8B"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản?"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="#8F8B8B"
+            android:textSize="22dp"
+            android:alpha="0.9"
+            />
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#4D2739AC"
+            android:text="Register Demo"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
