@@ -6,8 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.finalproject.Model.Account;
-import com.example.finalproject.Model.Staff;
+import com.example.finalproject.Models.Account;
+import com.example.finalproject.Models.Role;
+import com.example.finalproject.Models.Staff;
 
 import java.util.ArrayList;
 
@@ -24,41 +25,50 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Create tables
-        db.execSQL(AccountTable.createTable());
-        db.execSQL(StaffTable.createTable());
+        db.execSQL(AccountDAO.createTable());
+        db.execSQL(StaffDAO.createTable());
+        db.execSQL(SizeDAO.createTable());
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Upgrade database
+        // Drop the old tables
+        db.execSQL("DROP TABLE IF EXISTS " + CustomerDAO.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + StaffDAO.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + AccountDAO.TABLE_NAME);
+//        db.execSQL("DROP TABLE IF EXISTS " + OrderDAO.TABLE_NAME);
+//        db.execSQL("DROP TABLE IF EXISTS " + OrderItemDAO.TABLE_NAME);
+        // Recreate the tables
+        onCreate(db);
     }
 
-    //-----------------Account------------------
+    //--------------------------------------------Account--------------------------------------------
     // Method to add a new account
     public void addAccount(Account account) {
         SQLiteDatabase db = this.getWritableDatabase();
-        AccountTable.addAccount(account, db);
+        AccountDAO.addAccount(account, db);
         db.close();
     }
     
     // Method to delete an account
     public void deleteAccount(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        AccountTable.deleteAccount(id, db);
+        AccountDAO.deleteAccount(id, db);
         db.close();
     }
     
     // Method to update an account
     public void updateAccount(Account account) {
         SQLiteDatabase db = this.getWritableDatabase();
-        AccountTable.updateAccount(account, db);
+        AccountDAO.updateAccount(account, db);
         db.close();
     }
 
     // Method to check exists an account
     public boolean isAccountExists(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
-        boolean exists = AccountTable.isAccountExists(username, db);
+        boolean exists = AccountDAO.isAccountExists(username, db);
         db.close();
         return exists;
     }
@@ -66,48 +76,48 @@ public class DBHelper extends SQLiteOpenHelper {
     // Method to create a demo account
     public void createDemoAccount() {
         SQLiteDatabase db = this.getWritableDatabase();
-        AccountTable.createDemoAccount(db);
+        AccountDAO.createDemoAccount(db);
         db.close();
     }
     // Method get Account from username
     public Account getAccountByUsername(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Account account = AccountTable.getAccountByUsername(username,db);
+        Account account = AccountDAO.getAccountByUsername(username,db);
         db.close();
         return account;
     }
     //Method get all account
     public ArrayList<Account> getAllAccounts() {
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<Account> accounts = AccountTable.getAllAccounts(db);
+        ArrayList<Account> accounts = AccountDAO.getAllAccounts(db);
         return accounts;
     }
-    //----------------------Staff----------------------
+    //--------------------------------------------Staff--------------------------------------------
     // Method to add a new staff
     public void addStaff(Staff staff) {
         SQLiteDatabase db = this.getWritableDatabase();
-        StaffTable.addStaff(staff, db);
+        StaffDAO.addStaff(staff, db);
         db.close();
     }
     
     // Method to delete a staff
     public void deleteStaff(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        StaffTable.deleteStaff(id, db);
+        StaffDAO.deleteStaff(id, db);
         db.close();
     }
     
     // Method to update a staff
     public void updateStaff(Staff staff) {
         SQLiteDatabase db = this.getWritableDatabase();
-        StaffTable.updateStaff(staff, db);
+        StaffDAO.updateStaff(staff, db);
         db.close();
     }
 
     // Method to check exists an staff
     public boolean isStaffExist(String staffId) {
         SQLiteDatabase db = this.getReadableDatabase();
-        boolean exists = StaffTable.isStaffExist(staffId, db);
+        boolean exists = StaffDAO.isStaffExist(staffId, db);
         db.close();
         return exists;
     }
@@ -115,21 +125,29 @@ public class DBHelper extends SQLiteOpenHelper {
     // Method to create a demo account
     public void createDemoStaff() {
         SQLiteDatabase db = this.getWritableDatabase();
-        StaffTable.createDemoStaff(db);
+        StaffDAO.createDemoStaff(db);
         db.close();
     }
 
     // Method get staff from ID
     public Staff getStaffById(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Staff staff = StaffTable.getStaffById(id,db);
+        Staff staff = StaffDAO.getStaffById(id,db);
         db.close();
         return staff;
     }
     //Method get all staff
     public ArrayList<Staff> getAllStaff() {
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<Staff> staffList = StaffTable.getAllStaff(db);
+        ArrayList<Staff> staffList = StaffDAO.getAllStaff(db);
         return staffList;
+    }
+    //--------------------------------------------Role--------------------------------------------
+
+    // Method to get a role by its ID from the database
+    public Role getRoleById(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Role role = RoleDAO.getRoleById(id, db);
+        return role;
     }
 }

@@ -20,7 +20,7 @@
             android:name=".TableActivity"
             android:exported="true" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".FoodActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

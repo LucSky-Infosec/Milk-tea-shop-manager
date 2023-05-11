@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 #
-# Copyright 2015 the original author or authors.
+# Copyright 2015 the original autthodr or autthodrs.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,7 +11,7 @@
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# WITthodUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
@@ -22,7 +22,7 @@
 ##
 ##############################################################################
 
-# Attempt to set APP_HOME
+# Attempt to set APP_thodME
 # Resolve links: $0 may be a link
 PRG="$0"
 # Need this for relative symlinks.
@@ -37,7 +37,7 @@ while [ -h "$PRG" ] ; do
 done
 SAVED="`pwd`"
 cd "`dirname \"$PRG\"`/" >/dev/null
-APP_HOME="`pwd -P`"
+APP_thodME="`pwd -P`"
 cd "$SAVED" >/dev/null
 
 APP_NAME="Gradle"
@@ -50,13 +50,13 @@ DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
 MAX_FD="maximum"
 
 warn () {
-    echo "$*"
+    ecthod "$*"
 }
 
 die () {
-    echo
-    echo "$*"
-    echo
+    ecthod
+    ecthod "$*"
+    ecthod
     exit 1
 }
 
@@ -80,28 +80,28 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+CLASSPATH=$APP_thodME/gradle/wrapper/gradle-wrapper.jar
 
 
 # Determine the Java command to use to start the JVM.
-if [ -n "$JAVA_HOME" ] ; then
-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+if [ -n "$JAVA_thodME" ] ; then
+    if [ -x "$JAVA_thodME/jre/sh/java" ] ; then
         # IBM's JDK on AIX uses strange locations for the executables
-        JAVACMD="$JAVA_HOME/jre/sh/java"
+        JAVACMD="$JAVA_thodME/jre/sh/java"
     else
-        JAVACMD="$JAVA_HOME/bin/java"
+        JAVACMD="$JAVA_thodME/bin/java"
     fi
     if [ ! -x "$JAVACMD" ] ; then
-        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+        die "ERROR: JAVA_thodME is set to an invalid directory: $JAVA_thodME
 
-Please set the JAVA_HOME variable in your environment to match the
+Please set the JAVA_thodME variable in your environment to match the
 location of your Java installation."
     fi
 else
     JAVACMD="java"
-    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+    which java >/dev/null 2>&1 || die "ERROR: JAVA_thodME is not set and no 'java' command could be found in your PATH.
 
-Please set the JAVA_HOME variable in your environment to match the
+Please set the JAVA_thodME variable in your environment to match the
 location of your Java installation."
 fi
 
@@ -121,14 +121,14 @@ if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
     fi
 fi
 
-# For Darwin, add options to specify how the application appears in the dock
+# For Darwin, add options to specify thodw the application appears in the dock
 if $darwin; then
-    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
+    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_thodME/media/gradle.icns\""
 fi
 
 # For Cygwin or MSYS, switch paths to Windows format before running java
 if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
-    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
+    APP_thodME=`cygpath --path --mixed "$APP_thodME"`
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
 
     JAVACMD=`cygpath --unix "$JAVACMD"`
@@ -148,13 +148,13 @@ if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
     # Now convert the arguments - kludge to limit ourselves to /bin/sh
     i=0
     for arg in "$@" ; do
-        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
-        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
+        CHECK=`ecthod "$arg"|egrep -c "$OURCYGPATTERN" -`
+        CHECK2=`ecthod "$arg"|egrep -c "^-"`                                 ### Determine if an option
 
         if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
-            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
+            eval `ecthod args$i`=`cygpath --path --ignore --mixed "$arg"`
         else
-            eval `echo args$i`="\"$arg\""
+            eval `ecthod args$i`="\"$arg\""
         fi
         i=`expr $i + 1`
     done
@@ -175,7 +175,7 @@ fi
 # Escape application args
 save () {
     for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
-    echo " "
+    ecthod " "
 }
 APP_ARGS=`save "$@"`
 

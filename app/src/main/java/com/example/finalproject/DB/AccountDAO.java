@@ -5,13 +5,11 @@ package com.example.finalproject.DB;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.finalproject.Model.Account;
+import com.example.finalproject.Models.Account;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
-public class AccountTable {
+public class AccountDAO {
     // Constants for table name and column names
     public static final String TABLE_NAME = "Account";
     public static final String COLUMN_ID = "id";
@@ -28,7 +26,7 @@ public class AccountTable {
                 COLUMN_PASSWORD + " TEXT NOT NULL, " +
                 COLUMN_STATUS + " INTEGER NOT NULL, " +
                 COLUMN_STAFF_ID + " INTEGER NOT NULL, " +
-                "FOREIGN KEY(" + COLUMN_STAFF_ID + ") REFERENCES " + StaffTable.TABLE_NAME + "(" + StaffTable.COLUMN_ID + ")" +
+                "FOREIGN KEY(" + COLUMN_STAFF_ID + ") REFERENCES " + StaffDAO.TABLE_NAME + "(" + StaffDAO.COLUMN_ID + ")" +
                 ");";
     }
     // Method to add a new account to the database
@@ -66,11 +64,11 @@ public class AccountTable {
     }
     public static void createDemoAccount(SQLiteDatabase db) {
         Account DemoAccount1 = new Account("1", "12345", true,  1);
-        AccountTable.addAccount(DemoAccount1, db);
+        AccountDAO.addAccount(DemoAccount1, db);
         Account DemoAccount2 = new Account("2", "12345", true,  2);
-        AccountTable.addAccount(DemoAccount2, db);
+        AccountDAO.addAccount(DemoAccount2, db);
         Account DemoAccount3 = new Account("3", "12345", true,  3);
-        AccountTable.addAccount(DemoAccount3, db);
+        AccountDAO.addAccount(DemoAccount3, db);
     }
     public static Account getAccountByUsername(String username, SQLiteDatabase db) {
         String[] columns = {COLUMN_ID, COLUMN_USERNAME, COLUMN_PASSWORD, COLUMN_STATUS, COLUMN_STAFF_ID};

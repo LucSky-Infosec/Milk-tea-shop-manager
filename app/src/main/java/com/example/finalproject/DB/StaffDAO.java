@@ -4,13 +4,11 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.finalproject.Model.Staff;
-import com.example.finalproject.R;
+import com.example.finalproject.Models.Staff;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
 
-public class StaffTable {
+public class StaffDAO {
     // Constants for table name and column names
     public static final String TABLE_NAME = "Staff";
     public static final String COLUMN_ID = "id";
@@ -34,7 +32,7 @@ public class StaffTable {
                 COLUMN_GENDER + " TEXT NOT NULL, " +
                 COLUMN_AVATAR+ " TEXT NOT NULL, " +
                 COLUMN_ACCOUNT_ID + " INTEGER NOT NULL, " +
-                "FOREIGN KEY(" + COLUMN_ACCOUNT_ID + ") REFERENCES " + AccountTable.TABLE_NAME + "(" + AccountTable.COLUMN_ID + ")" +
+                "FOREIGN KEY(" + COLUMN_ACCOUNT_ID + ") REFERENCES " + AccountDAO.TABLE_NAME + "(" + AccountDAO.COLUMN_ID + ")" +
                 ");";
     }
 
@@ -79,11 +77,11 @@ public class StaffTable {
 //     Method to create a demo staff
     public static void createDemoStaff(SQLiteDatabase db) {
         Staff staffDemo1 = new Staff("Bão", "Nguyễn Hoài", "0123456789", 1, "Nam", "/storage/emulated/0/Download/boyAvatar2.png", 1);
-        StaffTable.addStaff(staffDemo1, db);
+        StaffDAO.addStaff(staffDemo1, db);
         Staff staffDemo2 = new Staff("Huyền", "Tôn Thị Thu", "0123456789", 0, "Nữ", "/storage/emulated/0/Download/girlAvatar1.jpeg", 2);
-        StaffTable.addStaff(staffDemo2, db);
+        StaffDAO.addStaff(staffDemo2, db);
         Staff staffDemo3 = new Staff("Dương", "Vân Phi", "0123456789", 0, "Nam", "/storage/emulated/0/Download/boyAvatar1.jpg", 3);
-        StaffTable.addStaff(staffDemo3, db);
+        StaffDAO.addStaff(staffDemo3, db);
     }
     public static Staff getStaffById(int id, SQLiteDatabase db) {
         String[] columns = {COLUMN_ID, COLUMN_FIRST_NAME, COLUMN_LAST_NAME, COLUMN_PHONE_NUMBER, COLUMN_ROLE, COLUMN_GENDER, COLUMN_AVATAR, COLUMN_ACCOUNT_ID};
@@ -104,7 +102,6 @@ public class StaffTable {
         cursor.close();
         return staff;
     }
-
     public static ArrayList<Staff> getAllStaff(SQLiteDatabase db) {
         ArrayList<Staff> staffList = new ArrayList<>();
         String[] columns = {COLUMN_ID, COLUMN_FIRST_NAME, COLUMN_LAST_NAME, COLUMN_PHONE_NUMBER, COLUMN_ROLE, COLUMN_GENDER, COLUMN_AVATAR, COLUMN_ACCOUNT_ID};
@@ -124,7 +121,4 @@ public class StaffTable {
         cursor.close();
         return staffList;
     }
-
-
-
 }

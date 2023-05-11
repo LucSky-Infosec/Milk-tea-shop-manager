@@ -1,4 +1,4 @@
-package com.example.finalproject.Model;
+package com.example.finalproject.Models;
 
 public class Staff {
     private Integer id;

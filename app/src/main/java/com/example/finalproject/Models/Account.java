@@ -1,4 +1,4 @@
-package com.example.finalproject.Model;
+package com.example.finalproject.Models;
 
 public class Account {
     private Integer id;

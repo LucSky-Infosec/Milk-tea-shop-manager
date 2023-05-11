@@ -1,5 +1,5 @@
 @rem
-@rem Copyright 2015 the original author or authors.
+@rem Copyright 2015 the original autthodr or autthodrs.
 @rem
 @rem Licensed under the Apache License, Version 2.0 (the "License");
 @rem you may not use this file except in compliance with the License.
@@ -9,12 +9,12 @@
 @rem
 @rem Unless required by applicable law or agreed to in writing, software
 @rem distributed under the License is distributed on an "AS IS" BASIS,
-@rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+@rem WITthodUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 @rem See the License for the specific language governing permissions and
 @rem limitations under the License.
 @rem
 
-@if "%DEBUG%" == "" @echo off
+@if "%DEBUG%" == "" @ecthod off
 @rem ##########################################################################
 @rem
 @rem  Gradle startup script for Windows
@@ -27,47 +27,47 @@ if "%OS%"=="Windows_NT" setlocal
 set DIRNAME=%~dp0
 if "%DIRNAME%" == "" set DIRNAME=.
 set APP_BASE_NAME=%~n0
-set APP_HOME=%DIRNAME%
+set APP_thodME=%DIRNAME%
 
-@rem Resolve any "." and ".." in APP_HOME to make it shorter.
-for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+@rem Resolve any "." and ".." in APP_thodME to make it sthodrter.
+for %%i in ("%APP_thodME%") do set APP_thodME=%%~fi
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
 
 @rem Find java.exe
-if defined JAVA_HOME goto findJavaFromJavaHome
+if defined JAVA_thodME goto findJavaFromJavathodme
 
 set JAVA_EXE=java.exe
 %JAVA_EXE% -version >NUL 2>&1
 if "%ERRORLEVEL%" == "0" goto execute
 
-echo.
-echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
-echo.
-echo Please set the JAVA_HOME variable in your environment to match the
-echo location of your Java installation.
+ecthod.
+ecthod ERROR: JAVA_thodME is not set and no 'java' command could be found in your PATH.
+ecthod.
+ecthod Please set the JAVA_thodME variable in your environment to match the
+ecthod location of your Java installation.
 
 goto fail
 
-:findJavaFromJavaHome
-set JAVA_HOME=%JAVA_HOME:"=%
-set JAVA_EXE=%JAVA_HOME%/bin/java.exe
+:findJavaFromJavathodme
+set JAVA_thodME=%JAVA_thodME:"=%
+set JAVA_EXE=%JAVA_thodME%/bin/java.exe
 
 if exist "%JAVA_EXE%" goto execute
 
-echo.
-echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
-echo.
-echo Please set the JAVA_HOME variable in your environment to match the
-echo location of your Java installation.
+ecthod.
+ecthod ERROR: JAVA_thodME is set to an invalid directory: %JAVA_thodME%
+ecthod.
+ecthod Please set the JAVA_thodME variable in your environment to match the
+ecthod location of your Java installation.
 
 goto fail
 
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+set CLASSPATH=%APP_thodME%\gradle\wrapper\gradle-wrapper.jar
 
 
 @rem Execute Gradle
